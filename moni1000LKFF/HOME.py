@@ -79,7 +79,7 @@ for i, row in df_gps.iterrows():
         # ツールチップの指定(都道府県名)
         tooltip=f"{row['site']}サイト",
         # ポップアップの指定
-        popup=folium.Popup(f"<a href='{row['url']}'>{row['res']}</a>", max_width=300),
+        popup=folium.Popup(f"<a href='{row['url']}' target='_blank'>{row['res']}</a>", max_width=300),
         # アイコンの指定(アイコン、色)
         icon=folium.Icon(icon="eye-open",icon_color="white", color="blue")
     ).add_to(m)
