@@ -25,7 +25,7 @@ with col2:
 
 
 st.title('モニ1000陸水域：湖沼 淡水魚類調査')
-st.subheader('Biodiversity Dashboard by WIJ')
+st.subheader('D3（でぇーさん）ビュワー by WIJ')
 st.write("#")
 st.write('このページは、モニタリングサイト1000 陸水域 湖沼 淡水魚類調査のデータをインタラクティブに利用するため、\
     PythonのStreamlitライブラリを使用して開発したウェブアプリケーションです。\
