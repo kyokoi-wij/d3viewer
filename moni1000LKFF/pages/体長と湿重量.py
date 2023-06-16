@@ -22,27 +22,17 @@ try:
     # データを読み込む   
     st.sidebar.subheader('🤖データのアップロード')
     uploaded_file5 = st.sidebar.file_uploader('KOS06-2 の csvファイルをアップロードしてください。', 
-                                              accept_multiple_files = True, 
                                               type = 'csv', 
                                               key = 'up_slww')
     # Layout (Sidebar)↑
     
-    
-    
-    if uploaded_file5 is not None:
-        dfs_to_combine = []
-        for file in uploaded_file5:
-            dfs_to_combine.append(pd.read_csv(file, comment='#'))
-                
-        combined_df = pd.concat(dfs_to_combine, axis=0)
-
-        # 結合されたデータフレームを新しいCSVファイルに書き出す
-        combined_df.to_csv('combined_data.csv', index=False)
 
     # データフレームの作成
-    if combined_df is not None:
-        combined_df['site_code'] = combined_df['catalog_number'].str[7:10]
-        df_slww = combined_df[['site_code',
+    if uploaded_file5 is not None:
+
+        df_ffsw = pd.read_csv(uploaded_file5, comment = "#")
+        df_ffsw['site_code'] = df_ffsw['catalog_number'].str[7:10]
+        df_slww = df_ffsw[['site_code',
                            'year_collected',
                            'japanese_name',
                            'standard_length',
